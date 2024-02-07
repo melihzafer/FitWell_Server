@@ -5,8 +5,6 @@ const workoutSchema = new mongoose.Schema({
   category: String,
   duration: String,
   description: String,
-  likes: String,
-  price: Number,
 });
 
 const Workout = mongoose.model("Workouts", workoutSchema);

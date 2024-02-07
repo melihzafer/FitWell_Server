@@ -25,18 +25,19 @@ router.get("/get", async (req, res) => {
 
 router.post("/post", async (req, res) => {
   try {
-    const { title, category, duration } = req.body;
+    const { title, category, duration, description } = req.body;
 
     // Create a new workout
     const newWorkout = new Workout({
       title,
       category,
       duration,
+      description
     });
 
     // Save the workout to the database
     await newWorkout.save();
-
+   
     res.status(201).json({ message: 'Workout created successfully', workout: newWorkout });
   } catch (error) {
     console.error(error);
